@@ -11,6 +11,12 @@ You need the following environment variables setup:
 ```
 
 ### Running
+To run the server undetached:
+
+```
+    bundle exec ruby run.rb run
+```
+
 To start the deamon:
 
 ```
