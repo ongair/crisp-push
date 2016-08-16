@@ -8,9 +8,27 @@ crisp_client.set_credentials(ENV['CRISP_IDENTIFIER'], ENV['CRISP_KEY'])
 crisp_client.on "message:send" do |message|
   puts message
   RestClient::Request.execute(
-    url: "#{ENV['BASE_URL']}/konexta/crisp/messages", # Change to app URL if you need to test it
+    url: "#{ENV['BASE_URL']}/konexta/crisp/messages",
     method: :post,
     payload: message
+  )
+end
+
+crisp_client.on "session:set_email" do |user|
+  puts user
+  RestClient::Request.execute(
+    url: "#{ENV['BASE_URL']}/konexta/users/#{user['session_id']}",
+    method: :put,
+    payload: {'user[email]' => user['email']}
+  )
+end
+
+crisp_client.on "session:set_nickname" do |user|
+  puts user
+  RestClient::Request.execute(
+    url: "#{ENV['BASE_URL']}/konexta/users/#{user['session_id']}",
+    method: :put,
+    payload: {'user[name]' => user['nickname']}
   )
 end
 
