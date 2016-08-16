@@ -1,0 +1,45 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    daemons (1.2.4)
+    domain_name (0.5.20160615)
+      unf (>= 0.0.5, < 1.0.0)
+    event_emitter (0.2.5)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
+    httparty (0.14.0)
+      multi_xml (>= 0.5.2)
+    json (2.0.2)
+    mime-types (2.99.2)
+    multi_xml (0.5.5)
+    netrc (0.11.0)
+    rest-client (1.8.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
+    ruby-crisp-api (1.2.0)
+      event_emitter (~> 0.2.4)
+      rest-client (~> 1.8.0)
+      socket.io-client-simple (~> 1.2.0)
+    socket.io-client-simple (1.2.1)
+      event_emitter
+      httparty
+      json
+      websocket-client-simple (~> 0.3.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.2)
+    websocket (1.2.3)
+    websocket-client-simple (0.3.0)
+      event_emitter
+      websocket
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  daemons
+  ruby-crisp-api
+
+BUNDLED WITH
+   1.11.2
