@@ -1,9 +1,7 @@
 # Crisp Worker
-===============
 Simple deamon that connects to (https://crisp.im)[Crisp] via sockets and pushes to a webservice.
 
-## Configuration
-=================
+### Configuration
 You need the following environment variables setup:
 ```
     export CRISP_IDENTIFIER='YOUR_CRISP_IDENTIFIER'
@@ -13,7 +11,6 @@ You need the following environment variables setup:
 ```
 
 ### Running
-============
 To start the deamon:
 
 ```
