@@ -19,7 +19,7 @@ crisp_client.on "session:set_email" do |user|
   RestClient::Request.execute(
     url: "#{ENV['BASE_URL']}/konexta/users/#{user['session_id']}",
     method: :put,
-    payload: {'user[email]' => user['email']}
+    payload: {'user[email]' => user['email'], 'user[user_type]' => 'Crisp'}
   )
 end
 
@@ -28,7 +28,7 @@ crisp_client.on "session:set_nickname" do |user|
   RestClient::Request.execute(
     url: "#{ENV['BASE_URL']}/konexta/users/#{user['session_id']}",
     method: :put,
-    payload: {'user[name]' => user['nickname']}
+    payload: {'user[name]' => user['nickname'], 'user[user_type]' => 'Crisp'}
   )
 end
 
