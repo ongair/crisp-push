@@ -32,5 +32,14 @@ crisp_client.on "session:set_nickname" do |user|
   )
 end
 
+crisp_client.on "message:acknowledge:delivered" do |message|
+  puts message
+  RestClient::Request.execute(
+    url: "#{ENV['BASE_URL']}/konexta/crisp/receipts",
+    method: :post,
+    payload: message
+  )
+end
+
 loop do
 end
